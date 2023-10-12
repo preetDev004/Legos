@@ -1525,6 +1525,10 @@ html {
   height: 1.5rem;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .w-52 {
   width: 13rem;
 }
@@ -1535,6 +1539,10 @@ html {
 
 .w-auto {
   width: auto;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .max-w-md {
