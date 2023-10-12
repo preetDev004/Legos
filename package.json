@@ -1,0 +1,22 @@
+{
+  "name": "a2",
+  "version": "1.0.0",
+  "description": "The A2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "tw:build": "tailwindcss build -i ./public/css/tailwind.css -o ./public/css/main.css"
+  },
+  "author": "Preet Patel",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "daisyui": "^3.8.3",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3"
+  }
+}

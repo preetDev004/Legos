@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  height: 100vh;
+  width: 100%;
+}
+.green_gradient {
+  @apply bg-gradient-to-br from-green-300 to-green-600 bg-clip-text text-transparent;
+}
+
+.custom-active {
+  background-color: rgb(74 222 128);
+  color: black;
+}
