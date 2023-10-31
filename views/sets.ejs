@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar', {page: '/lego/sets'}) %>
+
+    <!-- Hero -->
+
+    <div class="container mx-auto mt-10">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold green_gradient">Collection</h1>
+
+            <p class="py-6 text-gray-400">
+              Browse the entire collection. Click the theme to filter by themes
+              such as:
+              <a href="/lego/sets?theme=technic"><button
+                class="btn text-black bg-green-400 hover:text-black hover:bg-green-400 btn-xs"
+              >
+                TECHNIC
+              </button></a>
+              <a href="/lego/sets?theme=classic%20town"><button
+                class="btn text-black bg-green-400 hover:text-black hover:bg-green-400 btn-xs"
+              >
+                CLASSIC TOWN</a>
+              </button>
+              <a href="/lego/sets?theme=supplemental"><button
+                class="btn text-black bg-green-400 hover:text-black hover:bg-green-400 btn-xs"
+              >
+                SUPPLEMENTAL
+              </button></a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="overflow-x-auto mt-5">
+        <table class="table">
+          <!-- head -->
+
+          <tbody>
+            <!-- row 1 -->
+            <% sets.forEach(set=>{ %>
+            <tr>
+              <td colspan="2">
+                <div class="flex items-center space-x-3">
+                  <div class="avatar">
+                    <div class="w-32 h-32">
+                      <img
+                        class="w-full h-full rounded-md"
+                        src="<%=set.img_url%>"
+                        alt="Lego-img"
+                      />
+                    </div>
+                  </div>
+                  <div class="px-14">
+                    <p>
+                      <span class="font-bold"><%= set.name %></span> |
+                      <a href="/lego/sets?theme=<%= set.theme %>"><span
+                        class="text-sm opacity-80 hover:opacity-100 text-green-400 cursor-pointer hover:underline underline-green-400 transition-all duration-200"
+                      >
+                        <%= set.theme %>
+                      </span></a>
+                    </p>
+                  </div>
+                </div>
+              </td>
+
+              <td class="px-8">
+                <span
+                  ><b>Year: </b><%= set.year %> - <b>Parts: </b><%=
+                  set.num_parts %></span
+                >
+              </td>
+              <th>
+                <a href="/lego/sets/<%= set.set_num %>"
+                  ><button
+                    class="btn text-green-400 hover:text-black hover:bg-green-400 btn-xs md:btn-sm"
+                  >
+                    details
+                  </button></a
+                >
+              </th>
+            </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

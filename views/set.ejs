@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar', {page: ''}) %>
+
+    <!-- Hero -->
+    <div class="container mx-auto mt-10">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold green_gradient"><%= set.name %></h1>
+
+            <p class="py-6 text-gray-400">
+              Below, you will find detailed information about the set: <%=
+              set.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+        <div class="w-full max-h-80">
+          <img
+            class="w-full object-cover h-full rounded-lg"
+            src="<%= set.img_url %>"
+            alt="about"
+          />
+        </div>
+        <div>
+          <p class="py-1"><b>Set Name:</b> <%= set.name %></p>
+          <p class="py-1"><b>Year Released:</b> <%= set.year %></p>
+          <p class="py-1"><b>Theme:</b> <%= set.theme %></p>
+          <p class="py-1"><b>Number of Parts:</b> <%= set.num_parts %></p>
+          <br />
+          <div id="quote mt-5 mb-5">
+            <p><span id="content"></span></p>
+            <p class="py-2">- <span id="author"></span></p>
+          </div>
+          <a href="#" onclick="history.back(); return false;">
+            <button
+              class="btn mt-2 hover:text-green-400 text-black hover:bg-black bg-green-400 btn-xs md:btn-sm"
+            >
+              Return
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const content = document.getElementById("content");
+      const author = document.getElementById("author");
+
+      fetch("https://quotable.io/random")
+        .then((res) => res.json())
+        .then((quote) => {
+          content.innerText = `"${quote.content}"`;
+          author.innerText = quote.author;
+        })
+        .catch((err) => console.log(err));
+    });
+  </script>
+</html>

@@ -1,0 +1,69 @@
+<div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a
+        href="/"
+        class="hover:text-green-500 text-green-400 w-auto btn btn-ghost hover:bg-transparent normal-case text-xl"
+        >Lego's</a
+      >
+    </div>
+    <div class="dropdown">
+      <label tabindex="0" class="btn btn-ghost sm:hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-6 h-6 stroke-emerald-400"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          />
+        </svg>
+      </label>
+      <ul
+        tabindex="0"
+        class="sm:hidden menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+      >
+        <li>
+          <a
+            href="/lego/sets"
+            class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/lego/sets") ? 'custom-active' : '' %> "
+            >View Collection</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/about") ? 'custom-active' : '' %> "
+            >About</a
+          >
+        </li>
+           
+      </ul>
+    </div>
+    <div class="navbar-center hidden sm:flex">
+      <ul class="menu menu-horizontal px-1">
+          
+        <li class="mx-2">
+          <a
+          href="/lego/sets"
+          class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/lego/sets") ? 'custom-active' : '' %> "
+            > View Collection</a
+          >
+        </li>
+        <li class="mx-2">
+          <a
+            href="/about"
+            class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/about") ? 'custom-active' : '' %> "
+            >About</a
+          >
+        </li>
+      </ul>
+      <script>
+        console.log("page:", '<%= page %>');
+      </script>
+    </div>
+  </div>

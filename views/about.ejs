@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar', {page: '/about'}) %>
+
+    <!-- Hero -->
+    <div class="container mx-auto mt-10">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold green_gradient">About</h1>
+
+            <p class="py-6 text-gray-400">
+              "Turning lines of code into innovative solutions, one keystroke at
+              a time." - The designer & developer.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+        <div class="w-full h-full">
+          <img 
+            class="w-full h-full rounded-lg "
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiKjOkrrukUkRh0JfJdHDfII0zDAgjtvDEnj4_dgaAhVyi66SL"
+            alt="about"
+          />
+        </div>
+        <div>
+          <p>
+            My name is <b class="text-green-400">Preet Patel</b> and I'm
+            currently studying at Seneca Polytechnic.
+          </p>
+          <br>
+          <p>
+            I'm a passionate developer with a strong drive to create innovative
+            solutions that make a positive impact. With an unwavering enthusiasm
+            for coding, I thrives on turning complex challenges into elegant
+            software solutions. Beyond the world of technology, I'm an avid
+            traveler who finds inspiration in exploring new destinations and
+            immersing in the beauty of nature. My fascination with the
+            Northern Lights embodies a sense of wonder and appreciation for the
+            natural world. When not coding or traveling, I enjoys the
+            adrenaline rush of competitive gaming, with Valorant being a
+            favorite. With a diverse set of interests and a commitment to have
+            excellence in the realm of development, I'm a
+            well-rounded individual who brings creativity and dedication to
+            every project I undertake.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

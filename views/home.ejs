@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lego Collection</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body tabindex="-1">
+    <!-- Navbar -->
+    <%- include('partials/navbar', {page: ''}) %>
+
+    <!-- Hero -->
+    <div class="container mx-auto mt-10">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold green_gradient">
+              Discover the World of Lego Heroes
+            </h1>
+
+            <p class="py-6 text-gray-400">
+              Join us on an exciting adventure through the vibrant universe of
+              Lego. Unleash your inner builder and explore a world of creativity
+              and endless possibilities!
+            </p>
+
+            <a
+              href="/lego/sets"
+              class="btn hover:text-green-400 bg-green-400 text-black"
+              >Get Started Now</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10 grid-auto-rows-auto"
+      >
+        <div class="card-container">
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="https://cdn.rebrickable.com/media/sets/001-1.jpg"
+                alt="Gears"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Gears</h2>
+              <p>
+                This set was released in America (USA/CAN) by Samsonite in 1965.
+              </p>
+              <div class="card-actions justify-end">
+                <a
+                  href="/lego/sets/001-1"
+                  class="btn hover:text-green-400 bg-green-400 text-black"
+                >
+                  View
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-container">
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="https://cdn.rebrickable.com/media/sets/028-1.jpg"
+                alt="Nursery Furniture"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Nursery Furniture</h2>
+              <p>Classic Duplo set - create a nursery for your minis.</p>
+              <div class="card-actions justify-end">
+                <a
+                  href="/lego/sets/028-1"
+                  class="btn hover:text-green-400 bg-green-400 text-black"
+                >
+                  View
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-container">
+          <div class="card bg-base-100 shadow-xl">
+            <figure>
+              <img
+                src="https://cdn.rebrickable.com/media/sets/03093-1.jpg"
+                alt="The Race to Build It Board Game"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">The Race to Build It Board Game</h2>
+              <p>Classic game - released in 1999.</p>
+              <div class="card-actions justify-end">
+                <a
+                  href="/lego/sets/03093-1"
+                  class="btn hover:text-green-400 bg-green-400 text-black"
+                >
+                  View
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
