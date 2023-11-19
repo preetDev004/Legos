@@ -11,7 +11,7 @@
     <%- include('partials/navbar', {page: ''}) %>
 
     <!-- Hero -->
-    <div class="container mx-auto mt-10">
+    <div class="container mx-auto p-4 mt-10">
       <div class="hero bg-base-200 rounded-lg p-6">
         <div class="hero-content text-center">
           <div class="max-w-md">
@@ -24,7 +24,7 @@
           </div>
         </div>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-10 mb-3">
         <div class="w-full max-h-80">
           <img
             class="w-full object-cover h-full rounded-lg"
@@ -35,13 +35,20 @@
         <div>
           <p class="py-1"><b>Set Name:</b> <%= set.name %></p>
           <p class="py-1"><b>Year Released:</b> <%= set.year %></p>
-          <p class="py-1"><b>Theme:</b> <%= set.theme %></p>
+          <p class="py-1"><b>Theme:</b> <%= set.Theme.name %></p>
           <p class="py-1"><b>Number of Parts:</b> <%= set.num_parts %></p>
           <br />
-          <div id="quote mt-5 mb-5">
+          <div id="quote mt-5 mb-6">
             <p><span id="content"></span></p>
             <p class="py-2">- <span id="author"></span></p>
           </div>
+          <a class="mr-2" href="/lego/editSet/<%= set.set_num %>">
+            <button
+            class="btn text-green-400 border-emerald-400 btn-xs md:btn-sm"
+            >
+              EDIT SET: <%= set.name.toUpperCase() %>
+            </button></a
+          >
           <a href="#" onclick="history.back(); return false;">
             <button
               class="btn mt-2 hover:text-green-400 text-black hover:bg-black bg-green-400 btn-xs md:btn-sm"
