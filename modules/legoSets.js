@@ -188,22 +188,4 @@ module.exports = {
 // create models with define
 // connect models with foreign key
 // add data with bulkinsert if needed
-// sequelize
-//   .sync()
-//   .then(async () => {
-//     try {
 
-//       await Theme.bulkCreate(themeData);
-//       await Set.bulkCreate(setData);
-//       console.log("-----");
-//       console.log("data inserted successfully");
-//     } catch (err) {
-//       console.log("-----");
-//       console.log(err.message);
-//     }
-
-//     process.exit();
-//   })
-//   .catch((err) => {
-//     console.log("Unable to connect to the database:", err);
-//   });
