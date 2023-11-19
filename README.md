@@ -6,3 +6,4 @@ All the pages were provided dynamically by the server.
 
 ## Deployed
 https://legos-bti325.cyclic.app/
+
