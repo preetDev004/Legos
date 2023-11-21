@@ -138,7 +138,7 @@ const addSet = async (setData) => {
       await Set.create(setData);
       resolve();
     } catch (err) {
-      reject(err);
+      reject(err.errors[0].message);
     }
   });
 };
@@ -149,7 +149,7 @@ const editSet = async (set_num, setData) => {
       await Set.update(setData, { where: { set_num: set_num } });
       resolve();
     } catch (err) {
-      reject(err);
+      reject(err.errors[0].message);
     }
   });
 };
@@ -164,7 +164,7 @@ const deleteSet = async (set_num) => {
       });
       resolve();
     } catch (err) {
-      reject(err);
+      reject(err.errors[0].message);
     }
   });
 };
