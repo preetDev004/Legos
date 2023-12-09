@@ -1,4 +1,3 @@
-
 <div class="navbar bg-base-100">
     <div class="flex-1">
       <a
@@ -35,13 +34,7 @@
             >View Collection</a
           >
         </li>
-        <li>
-          <a
-            href="/lego/addSet"
-            class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/lego/addSet") ? 'custom-active' : '' %> "
-            >Add to Collection</a
-          >
-        </li>
+
         <li>
           <a
             href="/about"
@@ -49,6 +42,39 @@
             >About</a
           >
         </li>
+        <% if(session.user){ %>
+          <li>
+            <details>
+              <summary class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black">Account: <%= session.user.username %></summary>
+              <ul class="p-2 right-0">
+                <li>
+                  <a href="/lego/addSet" class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/lego/addSet") ? 'custom-active' : '' %>" >Add to Collection</a>
+                 </li>
+                 <li>
+                  <a  href="/userHistory" class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/userHistory") ? 'custom-active' : '' %>">User History</a>
+                </li>
+                <li>
+                  <a class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black" href="/logout">Log Out</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <% } else { %>
+         
+        <li>
+          <details>
+            <summary class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black">Account</summary>
+            <ul class="p-2 right-0">
+              <li>
+                <a href="/login" class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/login") ? 'custom-active' : '' %>" >Login</a>
+              </li>
+              <li>
+                <a href="/register" class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/register") ? 'custom-active' : '' %>" >Register</a>
+              </li>
+            </ul>
+          </details>
+        </li>
+            <% } %>
            
       </ul>
     </div>
@@ -62,13 +88,7 @@
             > View Collection</a
           >
         </li>
-        <li class="mx-2">
-          <a
-          href="/lego/addSet"
-          class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/lego/addSet") ? 'custom-active' : '' %>  "
-            > Add to Collection</a
-          >
-        </li>
+
         <li class="mx-2">
           <a
             href="/about"
@@ -76,6 +96,39 @@
             >About</a
           >
         </li>
+        <% if(session.user){ %>
+          <li>
+            <details>
+              <summary class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black"">Account: <%= session.user.username %></summary>
+              <ul class="p-2 right-0">
+                <li>
+                  <a href="/lego/addSet" class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/lego/addSet") ? 'custom-active' : '' %>" >Add to Collection</a>
+                 </li>
+                 <li>
+                  <a  href="/userHistory" class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/userHistory") ? 'custom-active' : '' %>">User History</a>
+                </li>
+                <li>
+                  <a class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black" href="/logout">Log Out</a>
+                </li>
+              </ul>
+            </details>
+          </li>
+          <% } else { %>
+         
+        <li>
+          <details>
+            <summary class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black">Account</summary>
+            <ul class="p-2 right-0">
+              <li>
+                <a href="/login" class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/login") ? 'custom-active' : '' %>" >Login</a>
+              </li>
+              <li>
+                <a href="/register" class="text-green-400 hover:bg-green-400 hover:bg-none hover:text-black <%= (page == "/register") ? 'custom-active' : '' %>" >Register</a>
+              </li>
+            </ul>
+          </details>
+        </li>
+            <% } %>
       </ul>
       <script>
         console.log("page:", '<%= page %>');

@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lego Collection</title>
+    <title>Lego Collection | Set</title>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="icon" sizes="2x32 64x64" href="images/favicon-32x32.png" />
@@ -49,13 +49,14 @@
             <p><span id="content"></span></p>
             <p class="py-2">- <span id="author"></span></p>
           </div>
-          <a class="mr-2" href="/lego/editSet/<%= set.set_num %>">
+          <% if(session.user){ %><a class="mr-2" href="/lego/editSet/<%= set.set_num %>">
             <button
             class="btn text-green-400 border-emerald-400 btn-xs md:btn-sm"
             >
               EDIT SET: <%= set.name.toUpperCase() %>
             </button></a
           >
+          <% } %>
           <a href="#" onclick="history.back(); return false;">
             <button
               class="btn mt-2 hover:text-green-400 text-black hover:bg-black bg-green-400 btn-xs md:btn-sm"

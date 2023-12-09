@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lego Collection | UserHistory</title>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="icon" sizes="2x32 64x64" href="images/favicon-32x32.png" />
+    <link rel="icon" sizes="16x16" href="images/favicon-16x16.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/images/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/images/android-chrome-512x512.png"
+    />
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <%- include('partials/navbar', {page: '/userHistory' }) %>
+
+    <!-- Hero -->
+
+    <div class="container mx-auto p-4">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold green_gradient"><%= session.user.username %></h1>
+
+            <p class="py-6">User History: <%= session.user.email %></p>
+          </div>
+        </div>
+      </div>
+
+      <br />
+
+      <table class="table table-zebra">
+        <thead>
+          <tr>
+            <th>Login Date/Time</th>
+            <th>Client Information</th>
+          </tr>
+        </thead>
+        <tbody>
+            <% session.user.loginHistory.forEach(hist=>{ %>
+          <tr>
+            <td>
+              <!-- Coberting normal time string to localeTime string! -->
+              <%= (new Date(hist.dateTime)).toLocaleString('en-CA', { 
+                weekday: 'short', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric', 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit', 
+                timeZoneName: 'short' 
+              }) %>
+            </td>
+            <td>
+                <%= hist.userAgent %>
+            </td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

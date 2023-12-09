@@ -1,14 +1,17 @@
 /**************************************************************************************************
- * WEB322 – Assignment 5*
+ * WEB322 – Assignment 6*
  *
  * I declare that this assignment is my own work in accordance with Seneca Academic Policy.
  * No part of this assignment has been copied manually or electronically from any other source
  * (including web sites) or distributed to other students.
  *
- * Name: Preet D. Patel     Student ID: 123845224      Date: 11/16/2023
+ * https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+ *
+ * Name: Preet D. Patel     Student ID: 123845224      Date: 12/04/2023
+ *
+ * Published URL: https://legos-bti325.cyclic.app/
  *
  **************************************************************************************************/
-
 
 require("dotenv").config();
 const Sequelize = require("sequelize");
@@ -189,4 +192,3 @@ module.exports = {
 // create models with define
 // connect models with foreign key
 // add data with bulkinsert if needed
-
