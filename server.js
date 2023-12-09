@@ -7,7 +7,7 @@
  *
  * https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
  *
- * Name: Preet D. Patel     Student ID: 123845224      Date: 12/04/2023
+ * Name: Preet D. Patel     Student ID: 123845224      Date: 12/08/2023
  *
  * Published URL: https://legos-bti325.cyclic.app/
  *
@@ -143,23 +143,17 @@ app.get("/logout", (req, res) => {
   req.session.reset();
   res.redirect("/");
 });
-// app.get("/logout", ensureLogin, (req, res) => {
-//   req.session.reset();
-//   res.redirect("/");
-// });
 app.get("/userHistory", ensureLogin, (req, res) => {
   res.render("userHistory");
 });
 
 app.get("/register", (req, res) => {
-  // if (!req.session.user) {
+
   res.render("register", {
     errorMessage: "",
     successMessage: "",
     userName: "",
   });
-  //
-  // res.redirect("/");
 });
 
 app.post("/login", (req, res) => {
