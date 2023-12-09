@@ -134,8 +134,8 @@ app.get("/lego/deleteSet/:setNum", ensureLogin, (req, res) => {
 
 app.get("/login", (req, res) => {
   if (!req.session.user) {
-    res.render("login",{ errorMessage: '', userName: req.body.userName });
-  }else{
+    res.render("login", { errorMessage: "", userName: req.body.userName });
+  } else {
     res.redirect("/");
   }
 });
@@ -148,28 +148,17 @@ app.get("/logout", (req, res) => {
 //   res.redirect("/");
 // });
 app.get("/userHistory", ensureLogin, (req, res) => {
-  if (req.session.user) {
-    const date = new Date(req.session.user.loginHistory[0].dateTime);
-    const options = { 
-      weekday: 'short', 
-      year: 'numeric', 
-      month: 'short', 
-      day: 'numeric', 
-      hour: '2-digit', 
-      minute: '2-digit', 
-      second: '2-digit', 
-      timeZoneName: 'short' 
-    };
-   console.log(date.toLocaleString('en-CA', options));
-    res.render("userHistory");
-    
-  }
+  res.render("userHistory");
 });
 
 app.get("/register", (req, res) => {
   // if (!req.session.user) {
-    res.render("register",{errorMessage: '', successMessage: '',  userName: '' });
-  // 
+  res.render("register", {
+    errorMessage: "",
+    successMessage: "",
+    userName: "",
+  });
+  //
   // res.redirect("/");
 });
 
@@ -192,16 +181,20 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/register", (req, res) => {
-  
-  authData.registerUser(req.body)
+  authData
+    .registerUser(req.body)
     .then(() => {
-      res.render("register", {errorMessage: '', successMessage: "User created",  userName: '' });
+      res.render("register", {
+        errorMessage: "",
+        successMessage: "User created",
+        userName: "",
+      });
     })
     .catch((err) => {
       res.render("register", {
         errorMessage: err,
         userName: req.body.userName,
-        successMessage: ""
+        successMessage: "",
       });
     });
 });
