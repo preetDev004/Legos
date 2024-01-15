@@ -191,4 +191,4 @@ module.exports = {
 // connect to db with sequelize object and new keyword
 // create models with define
 // connect models with foreign key
-// add data with bulkinsert if needed
+// add data with bulkinsert 
