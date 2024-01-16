@@ -8,5 +8,5 @@ It's a basic CRUD(Create Read Update Delete) app with user sign-in, Login, and u
 For more info on the project click on the link below!
 
 ## Deployed
-https://legos-bti325.cyclic.app/
+https://legos.cyclic.app
 
