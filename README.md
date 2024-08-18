@@ -1,3 +1,5 @@
+`NOTE: You Can only run this project locally now because Cyclic has shut down its services in May 2024 and I couldn't transfer the deployment to an other service provider.`
+
 # Legos
 
 A full-stack web application created with ejs, tailwind CSS, DaisyUI, Bycrypt, MongoDB, PostgreSQL, and Sequelize.
